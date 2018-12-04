@@ -39,9 +39,9 @@ def imageLoad(name, card):
     
     try:
         image = pygame.image.load(fullname)
-    except pygame.error, message:
-        print 'Cannot load image:', name
-        raise SystemExit, message
+    except (pygame.error, message):
+        print ('Cannot load image:', name)
+        raise (SystemExit, message)
     image = image.convert()
     
     return image, image.get_rect()
@@ -51,9 +51,9 @@ def soundLoad(name):
     
     fullName = os.path.join('sounds', name)
     try: sound = pygame.mixer.Sound(fullName)
-    except pygame.error, message:
+    except (pygame.error, message):
         print 'Cannot load sound:', name
-        raise SystemExit, message
+        raise (SystemExit, message)
     return sound
 
 def display(font, sentence):
