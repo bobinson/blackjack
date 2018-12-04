@@ -52,7 +52,7 @@ def soundLoad(name):
     fullName = os.path.join('sounds', name)
     try: sound = pygame.mixer.Sound(fullName)
     except (pygame.error, message):
-        print 'Cannot load sound:', name
+        print ('Cannot load sound:', name)
         raise (SystemExit, message)
     return sound
 
